@@ -48,27 +48,53 @@ class _HomePageState extends State<HomePage> {
               controller: name,
               hintText: 'Name',
               prefixIcon: Icons.person,
+              keyboardType: TextInputType.name,
+              validator: (value) {
+                if (value.isEmpty || value == null) {
+                  return 'Please enter your Name';
+                }
+              },
             ),
             CustomTextInputField(
-              controller: mail,
-              prefixIcon: Icons.mail,
-              hintText: 'Email Address',
-            ),
+                controller: mail,
+                prefixIcon: Icons.mail,
+                hintText: 'Email Address',
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value.isEmpty || value == null) {
+                    return 'Please enter your Email Address';
+                  }
+                }),
             CustomTextInputField(
-              controller: phone,
-              prefixIcon: Icons.phone,
-              hintText: 'Phone Number',
-            ),
+                controller: phone,
+                prefixIcon: Icons.phone,
+                hintText: 'Phone Number',
+                keyboardType: TextInputType.phone,
+                validator: (value) {
+                  if (value.isEmpty || value == null) {
+                    return 'Please enter your Phone Number';
+                  }
+                }),
             CustomTextInputField(
-              controller: address,
-              hintText: 'Street Address',
-              prefixIcon: Icons.streetview,
-            ),
+                controller: address,
+                hintText: 'Street Address',
+                prefixIcon: Icons.streetview,
+                keyboardType: TextInputType.streetAddress,
+                validator: (value) {
+                  if (value.isEmpty || value == null) {
+                    return 'Please enter your Street Address';
+                  }
+                }),
             CustomTextInputField(
-              controller: city,
-              hintText: 'City',
-              prefixIcon: Icons.location_city,
-            ),
+                controller: city,
+                hintText: 'City',
+                prefixIcon: Icons.location_city,
+                keyboardType: TextInputType.text,
+                validator: (value) {
+                  if (value.isEmpty || value == null) {
+                    return 'Please enter your City';
+                  }
+                }),
             ElevatedButton(
               onPressed: addForm,
               child: const Text('Submit'),
